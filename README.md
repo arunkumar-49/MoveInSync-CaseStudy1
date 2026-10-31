@@ -47,3 +47,7 @@ This project implements a robust, production-grade **GPS gap backfill and billab
    Execute the Maven wrapper to compile and start the server on port `8081` (configured with explicit UTC timezone):
    ```bash
    .\mvnw spring-boot:run
+3. **Verify the API via PowerShell / cURL**:
+   Send a test payload to process a trip:
+   ```powershell
+   Invoke-RestMethod -Uri "http://localhost:8081/api/v1/trips/process" -Method Post -Headers @{"Content-Type"="application/json"} -Body '[{"latitude": 12.9716, "longitude": 77.5946, "timestamp": 1700000000, "accuracy": 10}, {"latitude": 12.9720, "longitude": 77.5950, "timestamp": 1700000060, "accuracy": 12}]'
