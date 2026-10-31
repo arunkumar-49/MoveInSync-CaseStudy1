@@ -43,3 +43,7 @@ This project implements a robust, production-grade **GPS gap backfill and billab
    Open a terminal in your project root and start the containerized databases:
    ```bash
    docker compose up -d
+2. **Build and Run the Spring Boot Application**:
+   Execute the Maven wrapper to compile and start the server on port `8081` (configured with explicit UTC timezone):
+   ```bash
+   .\mvnw spring-boot:run
